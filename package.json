@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set SUPPRESS_NO_CONFIG_WARNING=true && gulp default --environment",
-    "production": "set SUPPRESS_NO_CONFIG_WARNING=true && gulp default --environment=pro",
-    "start": "node index.js"
+    "start": "node index.js",
+    "production": "set SUPPRESS_NO_CONFIG_WARNING=true && gulp default --environment=pro"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "gulp-nodemon": "^2.2.1",
     "lodash": "^4.17.4",
     "pug": "^2.0.0-rc.3",
-    "use": "git+http://github.com/npmatichs/use.git#2.2"
+    "use": "git+http://github.com/npmatichs/use.git#2.2",
+    "validatorjs": "^3.13.5"
   }
 }

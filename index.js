@@ -12,6 +12,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 // to support JSON-encoded bodies
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // connect routes.

@@ -1,22 +1,21 @@
 let route = require('express').Router();
 
-route.get('/', (req, res) => {
-    return res.render('home');
-});
+// Controllers
+let HomeController = require('./controllers/homeController');
+let CommonController = require('./controllers/commonController');
 
-route.get('/test-task', (req, res) =>
-{
-    return res.render('test-task');
-});
+// Middlewares
+let ipv4Validate = require('./middlewares/ipv4FormValidator');
 
-route.get('/about', (req, res) =>
-{
-    return res.render('about');
-});
+// Routes
+route.get('/', HomeController.index);
 
-route.get('/contact', (req, res) =>
-{
-    return res.render('contact');
-});
+route.post('/', ipv4Validate, HomeController.handleCheck);
+
+route.get('/test-task', CommonController.showTestTask);
+
+route.get('/about', CommonController.showAbout);
+
+route.get('/contact', CommonController.showContact);
 
 module.exports = route;
