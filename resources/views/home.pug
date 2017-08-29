@@ -3,7 +3,7 @@ extends layout
 block content
     h1.cover.heading Check if IPv4 address is in the specified subnet.
 
-    form(method="post")
+    form(method="post" id="subnet_checker_form")
         .form-group
             label(for="ipv4_address") IPv4 Address
             input.form-control.input-lg.ipv4-input(type="text", id="ipv4_address", name="ipv4_address", placeholder="255.255.255.255", required="required")
@@ -13,4 +13,6 @@ block content
             input.form-control.input-lg.ipv4-input(type="text", id="ipv4_cidr", name="ipv4_cidr", placeholder="255.255.255.255", required="required")
 
         p.lead
-            button.btn.btn-lg.btn-default Check subnet range
+            button.btn.btn-lg.btn-default(data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Checking...") Check subnet range
+
+    table#checked-ips.table.table-bordered

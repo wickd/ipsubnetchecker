@@ -171,3 +171,16 @@ body {
         width: 700px;
     }
 }
+
+table.table.table-bordered thead tr th {
+    text-align:center;
+}
+
+.contacts .row .col-md-6 {
+    text-align: left;
+    min-height: 35px;
+}
+
+.contacts .row .col-md-6.val {
+    text-align: right;
+}

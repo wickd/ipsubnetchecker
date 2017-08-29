@@ -3,17 +3,21 @@ class SubnetCalculator
     /**
      * SubnetCalculator constructor.
      * 
-     * @param {string} ipv4 IPv4 Address.
-     * @param {string} cidr IPv4 CIDR address.
+     * @param {string|null} ipv4 IPv4 Address.
+     * @param {string|null} cidr IPv4 CIDR address.
      */
-    constructor(ipv4, cidr)
+    constructor(ipv4 = null, cidr = null)
     {
         this.ipv4 = ipv4;
         this.cidr = cidr;
-        let [subnet, mask] = this.cidr.split('/');
-        this.subnet = subnet;
-        this.originMask = mask;
-        this.maskSize = this.getIpMaskSize(mask);
+
+        if (cidr)
+        {
+            let [subnet, mask] = this.cidr.split('/');
+            this.subnet = subnet;
+            this.originMask = mask;
+            this.maskSize = this.getIpMaskSize(mask);
+        }
     }
 
     /**

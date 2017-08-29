@@ -4,14 +4,12 @@ exports.index = (req, res, next) => res.render('home');
 
 exports.handleCheck = (req, res, next) =>
 {
-    let ipv4_address = req.body.ipv4_address;
-    let [ subnet, mask ] = req.body.ipv4_cidr.split('/');
+    let subnetCalc = new SubnetCalculator(req.body.ipv4_address, req.body.ipv4_cidr);
 
-    let sc = new SubnetCalculator(req.body.ipv4_address, req.body.ipv4_cidr);
-
-    console.log(sc.inSubnetRange());
-
-    return res.redirect('back');
-
-    return res.sendStatus(200);
+    return res.send({
+        ip: subnetCalc.ipv4,
+        subnet: subnetCalc.subnet,
+        mask: subnetCalc.originMask,
+        output: subnetCalc.inSubnetRange()
+    });
 }
