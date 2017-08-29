@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title IP subnet checker
+
+        include ./partials/assets
+
+        block custom_assets
+    body
+        .site-wrapper
+            .site-wrapper-inner
+                .cover-container
+                    include ./partials/header
+        
+                    .inner.cover
+                        block content
+
+                    include ./partials/footer
+
+        include ./partials/scripts
+
+        block custom_scripts

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1.cover.heading Check IP tool
+
+    p.lead Main idea is to check if given IP refers to given subnet. For example:
+
+    code 
+        p IP - 10.0.5.24
+        p Subnet - 10.0.0.0/16
+        p Output - true
+
+    hr
+
+    code
+        p IP - 29.108.240.54
+        p Subnet - 218.128.105.248/27
+        p Output - false
+
+    p.lead For server side please use #[a(href="https://nodejs.org/en/") node.js] For client side you can use whatever you want For initial tests - #[a(href="https://tools.tracemyip.org/IPv4-check-if-ip-is-in-subnet/") use it]

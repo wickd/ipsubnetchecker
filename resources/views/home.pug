@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1.cover.heading Check if IPv4 address is in the specified subnet.
+
+    form(method="post")
+        .form-group
+            label(for="ipv4_address") IPv4 Address
+            input.form-control.input-lg.ipv4-input(type="text", id="ipv4_address", name="ipv4_address", placeholder="255.255.255.255", required="required")
+
+        .form-group
+            label(for="subnet") Subnet
+            input.form-control.input-lg.ipv4-input(type="text", id="subnet", name="subnet", placeholder="255.255.255.255", required="required")
+
+        p.lead
+            button.btn.btn-lg.btn-default Check subnet range
