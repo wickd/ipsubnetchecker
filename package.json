@@ -28,7 +28,6 @@
     "gulp-nodemon": "^2.2.1",
     "lodash": "^4.17.4",
     "pug": "^2.0.0-rc.3",
-    "use": "git+http://github.com/npmatichs/use.git#2.2",
     "validator": "^8.1.0",
     "validatorjs": "^3.13.5"
   }
